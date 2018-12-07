@@ -28,6 +28,57 @@ class ViewController: UIViewController {
         myChessGame = ChessGame.init(viewController: self)
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        pieceDragged = touches.first!.view as? UIChessPiece
+        
+        if pieceDragged != nil {
+            sourceOrigin = pieceDragged.frame.origin
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if pieceDragged != nil {
+            drag(piece: pieceDragged, usingGestureRecognizer: panOUTLET)
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if pieceDragged != nil {
+            let touchLocation = touches.first!.location(in: view)
+            
+            var x = Int(touchLocation.x)
+            var y = Int(touchLocation.y)
+            
+            x -= ViewController.SPACE_FROM_LEFT_EDGE
+            y -= ViewController.SPACE_FROM_TOP_EDGE
+            
+            x = (x / ViewController.TILE_SIZE) * ViewController.TILE_SIZE
+            y = (y / ViewController.TILE_SIZE) * ViewController.TILE_SIZE
+            
+            x += ViewController.SPACE_FROM_LEFT_EDGE
+            y += ViewController.SPACE_FROM_TOP_EDGE
+            
+            destOrigin = CGPoint(x: x, y: y)
+            let sourceIndex = ChessBoard.indexOf(origin: sourceOrigin)
+            let destIndex = ChessBoard.indexOf(origin: destOrigin)
+            
+            if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex) {
+                pieceDragged.frame.origin = destOrigin
+            } else {
+                pieceDragged.frame.origin = sourceOrigin
+            }
+        
+        }
+    }
+    
+    func drag(piece: UIChessPiece, usingGestureRecognizer gestureRecognizer: UIPanGestureRecognizer){
+        let translation = gestureRecognizer.translation(in: view)
+        
+        piece.center = CGPoint(x: translation.x + piece.center.x, y: translation.y + piece.center.y)
+        
+        gestureRecognizer.setTranslation(CGPoint.zero, in: view)
+    }
 
 
 }
