@@ -9,5 +9,5 @@
 import UIKit
 
 class ChessGame: NSObject {
-    <#code#>
+    
 }
