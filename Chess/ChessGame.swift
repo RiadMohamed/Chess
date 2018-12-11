@@ -14,7 +14,26 @@ class ChessGame: NSObject {
     
     func isMoveValid(piece: UIChessPiece, fromIndex sourceIndex: BoardIndex, toIndex destIndex: BoardIndex) -> Bool
     {
+        
+        guard isMoveOnBoard(forPieceFrom: sourceIndex, thatGoesTo: destIndex)
+        else {
+            print("Move not on Board")
+            return false
+        }
         return true
+    }
+    
+    func isMoveOnBoard(forPieceFrom sourceIndex: BoardIndex, thatGoesTo destIndex: BoardIndex) -> Bool {
+        if case 0..<theChessBoard.ROWS = sourceIndex.row {
+            if case 0..<theChessBoard.COLS = sourceIndex.col {
+                if case 0..<theChessBoard.ROWS = destIndex.row {
+                    if case 0..<theChessBoard.COLS = destIndex.col {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
     }
     
     func move(piece chessPieceToMove: UIChessPiece, fromIndex sourceIndex:  BoardIndex, toIndex destIndex: BoardIndex, toOrigin destOrigin: CGPoint) {
