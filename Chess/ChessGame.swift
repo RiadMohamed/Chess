@@ -24,7 +24,7 @@ class ChessGame: NSObject {
         
         // remove piece at destination
         let pieceToRemove = theChessBoard.board[destIndex.row][destIndex.col]
-        theChessBoard.remove(pieceToRemove)
+        theChessBoard.remove(piece: pieceToRemove)
         
         // place the chess piece at destination
         theChessBoard.place(chessPiece: chessPieceToMove, toIndex: destIndex, toOrigin: destOrigin)

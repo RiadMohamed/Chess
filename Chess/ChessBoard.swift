@@ -18,10 +18,23 @@ class ChessBoard: NSObject {
     
     
     func remove(piece: Piece) {
-        
+        if let chessPiece = piece as? UIChessPiece {
+            // remove from board matrix
+            let indexOnBoard = ChessBoard.indexOf(origin: chessPiece.frame.origin)
+            board[indexOnBoard.row][indexOnBoard.col] = Dummy(frame: chessPiece.frame)
+            // remoce from array of chess pieces
+            if let indexInChessPiecesArray = vc.chessPieces.lastIndex(of: chessPiece){
+                vc.chessPieces.remove(at: indexInChessPiecesArray)
+            }
+            // remove from view
+            chessPiece.removeFromSuperview()
+            }
     }
     
     func place(chessPiece: UIChessPiece, toIndex destIndex: BoardIndex, toOrigin destOrigin: CGPoint){
+        
+        chessPiece.frame.origin = destOrigin
+        board[destIndex.row][destIndex.col] = chessPiece
         
     }
     
@@ -32,7 +45,7 @@ class ChessBoard: NSObject {
         return BoardIndex(row: row, col: col)
     }
     
-    static func getFrame(forRow row: Int, forCol col: Int) -> CGRect {
+    func getFrame(forRow row: Int, forCol col: Int) -> CGRect {
         let x = CGFloat(ViewController.SPACE_FROM_LEFT_EDGE + col * ViewController.TILE_SIZE)
         let y = CGFloat(ViewController.SPACE_FROM_TOP_EDGE + row * ViewController.TILE_SIZE)
         
