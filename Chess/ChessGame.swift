@@ -14,7 +14,23 @@ class ChessGame: NSObject {
     
     func isMoveValid(piece: UIChessPiece, fromIndex sourceIndex: BoardIndex, toIndex destIndex: BoardIndex) -> Bool
     {
-        return false
+        return true
+    }
+    
+    func move(piece chessPieceToMove: UIChessPiece, fromIndex sourceIndex:  BoardIndex, toIndex destIndex: BoardIndex, toOrigin destOrigin: CGPoint) {
+        
+        // get initial chess piece frame
+        let initialPieceFrame = chessPieceToMove.frame
+        
+        // remove piece at destination
+        let pieceToRemove = theChessBoard.board[destIndex.row][destIndex.col]
+        theChessBoard.remove(pieceToRemove)
+        
+        // place the chess piece at destination
+        theChessBoard.place(chessPiece: chessPieceToMove, toIndex: destIndex, toOrigin: destOrigin)
+        
+        // put a dummy piece in the vacant source tile
+        theChessBoard.board[sourceIndex.row][sourceIndex.col] = Dummy(frame: initialPieceFrame)
     }
     
     init(viewController: ViewController){

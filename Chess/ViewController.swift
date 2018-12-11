@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var lblDisplayTurnOUTLET: UILabel!
-    @IBOutlet weak var lblDisplayCheckOUTLET: UILabel!
+    @IBOutlet weak	 var lblDisplayCheckOUTLET: UILabel!
     @IBOutlet var panOUTLET: UIPanGestureRecognizer!
     var pieceDragged: UIChessPiece!
     var sourceOrigin: CGPoint!
     var destOrigin: CGPoint!
-    static var SPACE_FROM_LEFT_EDGE = 8
-    static var SPACE_FROM_TOP_EDGE = 132
+    static var SPACE_FROM_LEFT_EDGE = 35
+    static var SPACE_FROM_TOP_EDGE = 181
     static var TILE_SIZE = 38
     var myChessGame: ChessGame!
     var chessPieces: [UIChessPiece]!
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
             let destIndex = ChessBoard.indexOf(origin: destOrigin)
             
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex) {
-                pieceDragged.frame.origin = destOrigin
+                myChessGame.move(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex, toOrigin: destOrigin)
             } else {
                 pieceDragged.frame.origin = sourceOrigin
             }
