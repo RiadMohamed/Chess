@@ -24,10 +24,30 @@ class ChessGame: NSObject {
             print("WRONG TURN")
             return false
         }
+        return isNormalMoveValid(forPiece: piece, fromIndex: sourceIndex, toIndex: destIndex)
+    }
+    
+    func isNormalMoveValid(forPiece piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        guard source != dest else {
+            print("MOVING PIECE ON IT'S CURRENT POSITION")
+            return false
+        }
+        guard !isAttackingAlliedPiece(sourceChessPiece: piece, destIndex: dest) else {
+            print("ATTACKING ALLIED PIECE")
+            return false
+        }
         return true
     }
     
-    
+    func isAttackingAlliedPiece(sourceChessPiece: UIChessPiece, destIndex: BoardIndex) -> Bool {
+        let destPiece: Piece = theChessBoard.board[destIndex.row][destIndex.col]
+        guard !(destPiece is Dummy) else {
+            return false
+        }
+        let destChessPiece = destPiece as! UIChessPiece
+        return (sourceChessPiece.color == destChessPiece.color)
+        
+    }
     
     func nextTurn() {
        isWhiteTurn = !isWhiteTurn
