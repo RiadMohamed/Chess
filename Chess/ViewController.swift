@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var myChessGame: ChessGame!
     var chessPieces: [UIChessPiece]!
     
-    override func viewDidLoad() {
+    override func viewDidLoad() {	
         super.viewDidLoad()
         
         chessPieces = []

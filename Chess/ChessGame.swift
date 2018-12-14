@@ -48,14 +48,16 @@ class ChessGame: NSObject {
             if !(piece as! Knight).doesMoveSeemFine(fromIndex: source, toIndex: dest){
                 return false
             }
-            
         default:
-            <#code#>
+            break
         }
         return true
     }
     
     func isMoveValid(forPawn pawn: Pawn, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        if !pawn.doesMoveSeemFine(fromIndex: source, toIndex: dest) {
+            return false
+        }
         return true
     }
     
