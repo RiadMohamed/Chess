@@ -9,18 +9,41 @@
 import UIKit
 
 class ChessGame: NSObject {
-    
     var theChessBoard: ChessBoard!
+    var isWhiteTurn = true;
     
     func isMoveValid(piece: UIChessPiece, fromIndex sourceIndex: BoardIndex, toIndex destIndex: BoardIndex) -> Bool
     {
         
-        guard isMoveOnBoard(forPieceFrom: sourceIndex, thatGoesTo: destIndex)
-        else {
+        guard isMoveOnBoard(forPieceFrom: sourceIndex, thatGoesTo: destIndex) else {
             print("Move not on Board")
             return false
         }
+        
+        guard isTurnColor(sameAsPiece: piece) else {
+            print("WRONG TURN")
+            return false
+        }
         return true
+    }
+    
+    
+    
+    func nextTurn() {
+       isWhiteTurn = !isWhiteTurn
+    }
+    
+    func isTurnColor(sameAsPiece piece: UIChessPiece) -> Bool {
+        if piece.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
+            if !isWhiteTurn {
+                return true;
+            }
+        } else {
+            if isWhiteTurn {
+                return true;
+            }
+        }
+        return false;
     }
     
     func isMoveOnBoard(forPieceFrom sourceIndex: BoardIndex, thatGoesTo destIndex: BoardIndex) -> Bool {
