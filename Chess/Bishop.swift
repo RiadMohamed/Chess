@@ -28,6 +28,10 @@ class Bishop: UIChessPiece {
         vc.view.addSubview(self)
     }
     
+    func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
