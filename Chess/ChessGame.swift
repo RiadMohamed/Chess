@@ -47,9 +47,7 @@ class ChessGame: NSObject {
                 return false
             }
         case is King:
-            if !(piece as! King).doesMoveSeemFine(fromIndex: source, toIndex: dest){
-                return false
-            }
+            return isMoveValid(forKing: piece as! King, fromIndex: source, toIndex: dest)
         default:
             break
         }
@@ -133,7 +131,10 @@ class ChessGame: NSObject {
     }
     
     func isMoveValid(forKing king: King, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
-        return true
+        if !king.doesMoveSeemFine(fromIndex: source, toIndex: dest) {
+            return false
+        }
+        return true 
     }
     
     func isAttackingAlliedPiece(sourceChessPiece: UIChessPiece, destIndex: BoardIndex) -> Bool {
