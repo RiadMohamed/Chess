@@ -134,8 +134,44 @@ class ChessGame: NSObject {
         if !king.doesMoveSeemFine(fromIndex: source, toIndex: dest) {
             return false
         }
+		
+		if isOpponentKing(nearKing: king, thatGoesTo: dest) {
+			return false
+		}
+		
         return true 
     }
+	
+	func isOpponentKing(nearKing movingKing: King, thatGoesTo destIndexOfMovingKing: BoardIndex) -> Bool {
+		var theOpponentKing: King
+		if movingKing == theChessBoard.whiteKing {
+			theOpponentKing = theChessBoard.blackKing
+		} else {
+			theOpponentKing = theChessBoard.whiteKing
+		}
+		
+		// get index of opp King.
+		var indexOfOpponentKing: BoardIndex!
+		for row in 0..<theChessBoard.ROWS {
+			for col in 0..<theChessBoard.COLS{
+				if let aKing = theChessBoard.board[row][col] as? King, aKing == theOpponentKing {
+					indexOfOpponentKing = BoardIndex(row: row, col: col)
+				}
+			}
+		}
+		
+		// Compute absolute difference between kings
+		let differenceInRows = abs(indexOfOpponentKing.row - destIndexOfMovingKing.row)
+		let differenceInCols = abs(indexOfOpponentKing.col - destIndexOfMovingKing.col)
+		
+		// if they are too clsoe then move is rejected
+		if case 0...1 = differenceInRows{
+			if case 0...1 = differenceInCols {
+				return true
+			}
+		}
+		return false
+	}
     
     func isAttackingAlliedPiece(sourceChessPiece: UIChessPiece, destIndex: BoardIndex) -> Bool {
         let destPiece: Piece = theChessBoard.board[destIndex.row][destIndex.col]
