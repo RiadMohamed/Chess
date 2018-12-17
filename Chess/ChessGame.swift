@@ -106,7 +106,27 @@ class ChessGame: NSObject {
             }
         }
         
+        var increaseRow = 0
+        if dest.row - source.row != 0 {
+            increaseRow = (dest.row - source.row) / abs(dest.row - source.row)
+        }
         
+        var increaseCol = 0
+        if dest.col - source.col != 0 {
+            increaseCol = (dest.col - source.col) / abs(dest.col - source.col)
+        }
+        
+        var nextRow = source.row + increaseRow
+        var nextCol = source.col + increaseCol
+        
+        while(nextRow != dest.row || nextCol != dest.col){
+            if !(theChessBoard.board[nextRow][nextCol] is Dummy) {
+                return false
+            } else {
+                nextRow += increaseRow
+                nextCol += increaseCol
+            }
+        }
         return true
     }
     
