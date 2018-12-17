@@ -58,7 +58,36 @@ class ChessGame: NSObject {
         if !pawn.doesMoveSeemFine(fromIndex: source, toIndex: dest) {
             return false
         }
-        return true
+        
+        // no attack
+        if source.col == dest.col {
+            // advance by 2
+            if pawn.triesToAdvanceBy2 {
+                var moveForward = 0
+                if pawn.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
+                    moveForward = 1
+                } else {
+                    moveForward = -1
+                }
+                
+                if theChessBoard.board[dest.row][dest.col] is Dummy && theChessBoard.board[dest.row - moveForward][dest.col] is Dummy {
+                    return true
+                }
+            }
+            // advance by 1
+            else {
+                if theChessBoard.board[dest.row][dest.col] is Dummy {
+                    return true
+                }
+            }
+        }
+        // attacking a piece
+        else {
+            if !(theChessBoard.board[dest.row][dest.col] is Dummy) {
+                return true
+            }
+        }
+        return false
     }
     
     func isMoveValid(forRookBishopQueen piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
