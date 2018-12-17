@@ -43,9 +43,11 @@ class ChessGame: NSObject {
         case is Rook, is Bishop, is Queen:
             return isMoveValid(forRookBishopQueen: piece, fromIndex: source, toIndex: dest)
         case is Knight:
-            return false
-        case is King:
             if !(piece as! Knight).doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                return false
+            }
+        case is King:
+            if !(piece as! King).doesMoveSeemFine(fromIndex: source, toIndex: dest){
                 return false
             }
         default:
