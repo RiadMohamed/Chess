@@ -12,7 +12,37 @@ class ChessGame: NSObject {
     var theChessBoard: ChessBoard!
     var isWhiteTurn = true;
 	var winner: String?
-    
+	
+	func getPlayerChecked() -> String? {
+		guard let whiteKingIndex = theChessBoard.getIndex(forChessPiece: theChessBoard.whiteKing)
+			else {
+			return nil
+		}
+		
+		guard let blackKingIndex = theChessBoard.getIndex(forChessPiece: theChessBoard.blackKing)
+			else {
+			return nil
+		}
+		
+		for row in 0..<theChessBoard.ROWS{
+			for col in 0..<theChessBoard.COLS{
+				if let chessPiece = theChessBoard.board[row][col] as? UIChessPiece {
+					let chessPieceIndex = BoardIndex(row: row, col: col)
+					if chessPiece.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
+						if isNormalMoveValid(forPiece: chessPiece, fromIndex: chessPieceIndex, toIndex: whiteKingIndex) {
+							return "White"
+						}
+					} else {
+						if isNormalMoveValid(forPiece: chessPiece, fromIndex: chessPieceIndex, toIndex: blackKingIndex) {
+							return "Black"
+						}
+					}
+				}
+			}
+		}
+		return nil
+	}
+	
     func isMoveValid(piece: UIChessPiece, fromIndex sourceIndex: BoardIndex, toIndex destIndex: BoardIndex) -> Bool
     {
         

@@ -72,6 +72,8 @@ class ViewController: UIViewController {
 					return
 				}
 				
+				// display check if any
+				displayCheck()
                 myChessGame.nextTurn()
 				
                 updateTurnOnScreen()
@@ -81,6 +83,17 @@ class ViewController: UIViewController {
         
         }
     }
+	
+	
+	func displayCheck() {
+		let playerChecked = myChessGame.getPlayerChecked()
+		
+		if playerChecked != nil {
+			lblDisplayCheckOUTLET.text = playerChecked! + " is in check"
+		} else {
+			lblDisplayCheckOUTLET.text = nil
+		}
+	}
 	
 	func displayWinner() {
 		let box = UIAlertController(title: "Game Over", message: "\(myChessGame.winner!) wins", preferredStyle: .alert)
