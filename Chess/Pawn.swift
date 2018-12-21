@@ -14,11 +14,12 @@ class Pawn: UIChessPiece {
     
     init(frame: CGRect, color: UIColor, vc: ViewController) {
         super.init(frame: frame)
-        
         if color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
             self.text = "♟"
         } else {
-            self.text = "♙"
+			let myAttribute: [NSAttributedString.Key : Any] = [ .strokeColor : UIColor.black, .strokeWidth : -2.0 ]
+			let tempString = NSAttributedString(string: "♙", attributes: myAttribute)
+            self.attributedText = tempString
         }
         
         self.isOpaque = false

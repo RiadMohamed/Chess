@@ -9,5 +9,11 @@
 import UIKit
 
 class StartScreen: UIViewController {
-	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		let destVC = segue.destination as! ViewController
+		
+	}
+	@IBAction func unwind(segue: UIStoryboardSegue) {
+		
+	}
 }

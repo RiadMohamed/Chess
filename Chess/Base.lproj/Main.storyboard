@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NA3-fM-w6h">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,22 +15,21 @@
             <objects>
                 <viewController id="NA3-fM-w6h" customClass="StartScreen" customModule="Chess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fpa-1t-1k4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="atH-eB-VDb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="103" translatesAutoresizingMaskIntoConstraints="NO" id="ReO-EL-IG2">
-                                <rect key="frame" x="88.5" y="221" width="198" height="225"/>
+                                <rect key="frame" x="88.666666666666686" y="375.66666666666669" width="198" height="61"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPL-58-axU">
                                         <rect key="frame" x="0.0" y="0.0" width="198" height="61"/>
                                         <state key="normal" image="button_start-game"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-gp-Ebg">
-                                        <rect key="frame" x="51" y="164" width="96" height="61"/>
-                                        <state key="normal" image="button_quit"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="newgame" id="jG0-U9-0U1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -56,346 +55,378 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ikw-s9-eH2">
-                                <rect key="frame" x="35" y="181" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7W-BD-Ylu">
-                                <rect key="frame" x="73" y="181" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9MX-dP-sTt">
-                                <rect key="frame" x="111" y="181" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8X8-XC-a22">
-                                <rect key="frame" x="149" y="181" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TeJ-Hi-fH3">
-                                <rect key="frame" x="187" y="181" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NsK-eH-p7O">
-                                <rect key="frame" x="225" y="181" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZdW-yi-7Vh">
-                                <rect key="frame" x="263" y="181" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SOr-aO-gqc">
-                                <rect key="frame" x="301" y="181" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pqE-B1-BXD">
-                                <rect key="frame" x="73" y="219" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6R-UW-XOY">
-                                <rect key="frame" x="111" y="219" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hpb-6i-n4K">
-                                <rect key="frame" x="149" y="219" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j9G-l1-aO9">
-                                <rect key="frame" x="187" y="219" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBr-Fx-LNg">
-                                <rect key="frame" x="225" y="219" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LX-a6-Jxy">
-                                <rect key="frame" x="263" y="219" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1d-Ey-WM1">
-                                <rect key="frame" x="301" y="219" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eet-yH-5Rr">
-                                <rect key="frame" x="35" y="219" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGr-5K-wFD">
-                                <rect key="frame" x="35" y="257" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaP-zp-FF0">
-                                <rect key="frame" x="73" y="257" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdq-cq-j6A">
-                                <rect key="frame" x="111" y="257" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-WC-PRt">
-                                <rect key="frame" x="149" y="257" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EtJ-Od-D0e">
-                                <rect key="frame" x="187" y="257" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l70-L8-fJT">
-                                <rect key="frame" x="225" y="257" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vkf-E4-nkS">
-                                <rect key="frame" x="263" y="257" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-UH-sMS">
-                                <rect key="frame" x="301" y="257" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xSm-cV-seJ">
-                                <rect key="frame" x="73" y="295" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCO-8b-4KA">
-                                <rect key="frame" x="111" y="295" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewZ-iT-10X">
-                                <rect key="frame" x="149" y="295" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pe8-CP-pZX">
-                                <rect key="frame" x="187" y="295" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFg-IR-zHl">
-                                <rect key="frame" x="225" y="295" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UYZ-8t-4mH">
-                                <rect key="frame" x="263" y="295" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uJ-3q-zlM">
-                                <rect key="frame" x="301" y="295" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZy-0X-vZX">
-                                <rect key="frame" x="35" y="295" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jb4-ba-SSm">
-                                <rect key="frame" x="35" y="333" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jT5-7m-8nr">
-                                <rect key="frame" x="73" y="333" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ChE-xm-BQp">
-                                <rect key="frame" x="111" y="333" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PfC-jB-1Eg">
-                                <rect key="frame" x="149" y="333" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3iI-XC-bDv">
-                                <rect key="frame" x="187" y="333" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79T-tD-cjU">
-                                <rect key="frame" x="225" y="333" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-fU-Ioh">
-                                <rect key="frame" x="263" y="333" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="39q-Z8-hUx">
-                                <rect key="frame" x="301" y="333" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-jX-g7X">
-                                <rect key="frame" x="73" y="371" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ked-Nt-14J">
-                                <rect key="frame" x="111" y="371" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gUf-qx-Hmm">
-                                <rect key="frame" x="149" y="371" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vl4-kF-1sd">
-                                <rect key="frame" x="187" y="371" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3R-Tf-Ddn">
-                                <rect key="frame" x="225" y="371" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhQ-iv-Xei">
-                                <rect key="frame" x="263" y="371" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Op2-1B-q7j">
-                                <rect key="frame" x="301" y="371" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tsD-qZ-X7W">
-                                <rect key="frame" x="35" y="371" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AcE-zJ-nZM">
-                                <rect key="frame" x="35" y="409" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JEz-e7-zlh">
-                                <rect key="frame" x="73" y="409" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-3O-IBg">
-                                <rect key="frame" x="111" y="409" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zy9-Jd-C04">
-                                <rect key="frame" x="149" y="409" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ls4-2r-rdy">
-                                <rect key="frame" x="187" y="409" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dKM-ot-fUL">
-                                <rect key="frame" x="225" y="409" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ich-4x-H4P">
-                                <rect key="frame" x="263" y="409" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-Xy-fgg">
-                                <rect key="frame" x="301" y="409" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGE-3R-Rua">
-                                <rect key="frame" x="73" y="447" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJs-4o-alE">
-                                <rect key="frame" x="111" y="447" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YWe-0H-ige">
-                                <rect key="frame" x="149" y="447" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lPP-zj-Eh0">
-                                <rect key="frame" x="187" y="447" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2r-04-Cba">
-                                <rect key="frame" x="225" y="447" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XI7-iE-hb5">
-                                <rect key="frame" x="263" y="447" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmw-i3-sgS">
-                                <rect key="frame" x="301" y="447" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tho-RT-CjO">
-                                <rect key="frame" x="35" y="447" width="38" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="White's Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB2-96-gxD">
-                                <rect key="frame" x="58" y="493" width="259" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdD-Pp-Q4z">
-                                <rect key="frame" x="74" y="547" width="228" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nUe-WT-Pnv">
+                                <rect key="frame" x="35.666666666666657" y="210.33333333333334" width="304" height="391.33333333333326"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DlJ-of-Vb7">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="304"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6IP-Uh-mNX">
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="38"/>
+                                                <subviews>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikw-s9-eH2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7W-BD-Ylu">
+                                                        <rect key="frame" x="38.000000000000007" y="0.0" width="37.999999999999993" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9MX-dP-sTt">
+                                                        <rect key="frame" x="76" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X8-XC-a22">
+                                                        <rect key="frame" x="114" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeJ-Hi-fH3">
+                                                        <rect key="frame" x="152" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsK-eH-p7O">
+                                                        <rect key="frame" x="190" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdW-yi-7Vh">
+                                                        <rect key="frame" x="228.00000000000003" y="0.0" width="37.999999999999972" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOr-aO-gqc">
+                                                        <rect key="frame" x="266" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="304" id="B4N-0e-ga2"/>
+                                                    <constraint firstAttribute="height" constant="38" id="z3E-R6-l77"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WRd-ja-jv9">
+                                                <rect key="frame" x="0.0" y="38" width="304" height="38"/>
+                                                <subviews>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eet-yH-5Rr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqE-B1-BXD">
+                                                        <rect key="frame" x="38.000000000000007" y="0.0" width="37.999999999999993" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6R-UW-XOY">
+                                                        <rect key="frame" x="76" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpb-6i-n4K">
+                                                        <rect key="frame" x="114" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9G-l1-aO9">
+                                                        <rect key="frame" x="152" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBr-Fx-LNg">
+                                                        <rect key="frame" x="190" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LX-a6-Jxy">
+                                                        <rect key="frame" x="228.00000000000003" y="0.0" width="37.999999999999972" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1d-Ey-WM1">
+                                                        <rect key="frame" x="266" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="iKZ-lj-Qqt"/>
+                                                    <constraint firstAttribute="width" constant="304" id="o2R-rk-OVb"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="B1Z-j3-0aj">
+                                                <rect key="frame" x="0.0" y="75.999999999999972" width="304" height="38"/>
+                                                <subviews>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGr-5K-wFD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaP-zp-FF0">
+                                                        <rect key="frame" x="38.000000000000007" y="0.0" width="37.999999999999993" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdq-cq-j6A">
+                                                        <rect key="frame" x="76" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-WC-PRt">
+                                                        <rect key="frame" x="114" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtJ-Od-D0e">
+                                                        <rect key="frame" x="152" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l70-L8-fJT">
+                                                        <rect key="frame" x="190" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkf-E4-nkS">
+                                                        <rect key="frame" x="228.00000000000003" y="0.0" width="37.999999999999972" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-UH-sMS">
+                                                        <rect key="frame" x="266" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="304" id="63m-v5-pgj"/>
+                                                    <constraint firstAttribute="height" constant="38" id="gvu-87-Hea"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xxv-t9-kiZ">
+                                                <rect key="frame" x="0.0" y="113.99999999999997" width="304" height="38"/>
+                                                <subviews>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZy-0X-vZX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSm-cV-seJ">
+                                                        <rect key="frame" x="38.000000000000007" y="0.0" width="37.999999999999993" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCO-8b-4KA">
+                                                        <rect key="frame" x="76" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewZ-iT-10X">
+                                                        <rect key="frame" x="114" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pe8-CP-pZX">
+                                                        <rect key="frame" x="152" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFg-IR-zHl">
+                                                        <rect key="frame" x="190" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYZ-8t-4mH">
+                                                        <rect key="frame" x="228.00000000000003" y="0.0" width="37.999999999999972" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uJ-3q-zlM">
+                                                        <rect key="frame" x="266" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="304" id="6KT-ms-btg"/>
+                                                    <constraint firstAttribute="height" constant="38" id="IQX-f6-9ko"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j0K-g9-R9W">
+                                                <rect key="frame" x="0.0" y="151.99999999999997" width="304" height="38"/>
+                                                <subviews>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jb4-ba-SSm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jT5-7m-8nr">
+                                                        <rect key="frame" x="38.000000000000007" y="0.0" width="37.999999999999993" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ChE-xm-BQp">
+                                                        <rect key="frame" x="76" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfC-jB-1Eg">
+                                                        <rect key="frame" x="114" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iI-XC-bDv">
+                                                        <rect key="frame" x="152" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79T-tD-cjU">
+                                                        <rect key="frame" x="190" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-fU-Ioh">
+                                                        <rect key="frame" x="228.00000000000003" y="0.0" width="37.999999999999972" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39q-Z8-hUx">
+                                                        <rect key="frame" x="266" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="C1i-lG-8a5"/>
+                                                    <constraint firstAttribute="width" constant="304" id="SpK-3B-F44"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pdr-Fv-18c">
+                                                <rect key="frame" x="0.0" y="189.99999999999997" width="304" height="38"/>
+                                                <subviews>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsD-qZ-X7W">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-jX-g7X">
+                                                        <rect key="frame" x="38.000000000000007" y="0.0" width="37.999999999999993" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ked-Nt-14J">
+                                                        <rect key="frame" x="76" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUf-qx-Hmm">
+                                                        <rect key="frame" x="114" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vl4-kF-1sd">
+                                                        <rect key="frame" x="152" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3R-Tf-Ddn">
+                                                        <rect key="frame" x="190" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhQ-iv-Xei">
+                                                        <rect key="frame" x="228.00000000000003" y="0.0" width="37.999999999999972" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Op2-1B-q7j">
+                                                        <rect key="frame" x="266" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="304" id="JBk-a3-TgZ"/>
+                                                    <constraint firstAttribute="height" constant="38" id="Pd0-mh-X6e"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XNa-22-f1T">
+                                                <rect key="frame" x="0.0" y="227.99999999999997" width="304" height="38.000000000000028"/>
+                                                <subviews>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcE-zJ-nZM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEz-e7-zlh">
+                                                        <rect key="frame" x="38.000000000000007" y="0.0" width="37.999999999999993" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-3O-IBg">
+                                                        <rect key="frame" x="76" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zy9-Jd-C04">
+                                                        <rect key="frame" x="114" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ls4-2r-rdy">
+                                                        <rect key="frame" x="152" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKM-ot-fUL">
+                                                        <rect key="frame" x="190" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ich-4x-H4P">
+                                                        <rect key="frame" x="228.00000000000003" y="0.0" width="37.999999999999972" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-Xy-fgg">
+                                                        <rect key="frame" x="266" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="304" id="LhN-Rj-oml"/>
+                                                    <constraint firstAttribute="height" constant="38" id="OAu-RK-gKp"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qIg-e7-4sz">
+                                                <rect key="frame" x="0.0" y="266" width="304" height="38"/>
+                                                <subviews>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tho-RT-CjO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGE-3R-Rua">
+                                                        <rect key="frame" x="38.000000000000007" y="0.0" width="37.999999999999993" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJs-4o-alE">
+                                                        <rect key="frame" x="76" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWe-0H-ige">
+                                                        <rect key="frame" x="114" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPP-zj-Eh0">
+                                                        <rect key="frame" x="152" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2r-04-Cba">
+                                                        <rect key="frame" x="190" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XI7-iE-hb5">
+                                                        <rect key="frame" x="228.00000000000003" y="0.0" width="37.999999999999972" height="38"/>
+                                                        <color key="backgroundColor" red="0.56862745098039214" green="0.32549019607843138" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmw-i3-sgS">
+                                                        <rect key="frame" x="266" y="0.0" width="38" height="38"/>
+                                                        <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="304" id="LWR-87-9V9"/>
+                                                    <constraint firstAttribute="height" constant="38" id="Xfj-Kq-1KA"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="304" id="1Sj-aT-5w8"/>
+                                            <constraint firstAttribute="width" constant="304" id="25d-TD-J78"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White's Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB2-96-gxD">
+                                        <rect key="frame" x="22.333333333333343" y="312" width="259" height="45.333333333333314"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="259" id="9do-dm-DVi"/>
+                                            <constraint firstAttribute="height" constant="45.5" id="A7M-QU-oQX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdD-Pp-Q4z">
+                                        <rect key="frame" x="38" y="365.33333333333326" width="228" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="228" id="C3L-Jb-V8a"/>
+                                            <constraint firstAttribute="height" constant="26" id="bqU-UB-dL0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="nUe-WT-Pnv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wl2-Yt-VkQ"/>
+                            <constraint firstItem="nUe-WT-Pnv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lRp-Ae-s9x"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="uON-GT-Jnh" appends="YES" id="vKd-iD-t7h"/>
@@ -405,9 +436,11 @@
                         <outlet property="lblDisplayCheckOUTLET" destination="XdD-Pp-Q4z" id="AOx-5t-s3U"/>
                         <outlet property="lblDisplayTurnOUTLET" destination="EB2-96-gxD" id="37k-XA-9Iw"/>
                         <outlet property="panOUTLET" destination="uON-GT-Jnh" id="4xp-8Y-Fnr"/>
+                        <segue destination="eYn-QX-f7t" kind="unwind" identifier="backToMainMenu" unwindAction="unwindWithSegue:" id="EtI-eh-K32"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="eYn-QX-f7t" userLabel="Exit" sceneMemberID="exit"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="uON-GT-Jnh"/>
             </objects>
             <point key="canvasLocation" x="63.75" y="32.74647887323944"/>
@@ -415,7 +448,6 @@
     </scenes>
     <resources>
         <image name="background" width="150.24000549316406" height="105.36000061035156"/>
-        <image name="button_quit" width="96" height="61.5"/>
         <image name="button_start-game" width="198.75" height="61.5"/>
     </resources>
 </document>

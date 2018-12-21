@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var lblDisplayTurnOUTLET: UILabel!
-    @IBOutlet weak	 var lblDisplayCheckOUTLET: UILabel!
+    @IBOutlet weak var lblDisplayCheckOUTLET: UILabel!
     @IBOutlet var panOUTLET: UIPanGestureRecognizer!
     var pieceDragged: UIChessPiece!
     var sourceOrigin: CGPoint!
@@ -34,7 +34,20 @@ class ViewController: UIViewController {
         
         if pieceDragged != nil {
             sourceOrigin = pieceDragged.frame.origin
-        }
+			let possibleMoves = myChessGame.getArrayOfPossibleMoves(forPiece: pieceDragged)
+			for moveIndex in possibleMoves {
+				let possibleTile = myChessGame.theChessBoard.board[moveIndex.row][moveIndex.col]
+				switch possibleTile {
+				case is Dummy:
+					let tempView = UIChessPiece(frame: CGRect(origin: CGPoint(x: possibleTile.x, y: possibleTile.y), size: CGSize(width: 38, height: 38)))
+					tempView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+				case is UIChessPiece:
+					(possibleTile as! UIChessPiece).backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+				default:
+					break
+				}
+			}
+		}
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -77,7 +90,19 @@ class ViewController: UIViewController {
 				} else {
 					resumeGame()
 				}
-				
+				let possibleMoves = myChessGame.getArrayOfPossibleMoves(forPiece: pieceDragged)
+				for moveIndex in possibleMoves {
+					let possibleTile = myChessGame.theChessBoard.board[moveIndex.row][moveIndex.col]
+					switch possibleTile {
+					case is Dummy:
+						let tempView = UIChessPiece(frame: CGRect(origin: CGPoint(x: possibleTile.x, y: possibleTile.y), size: CGSize(width: 38, height: 38)))
+						tempView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 0)
+					case is UIChessPiece:
+						(possibleTile as! UIChessPiece).backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 0)
+					default:
+						break
+					}
+				}
 
             } else {
                 pieceDragged.frame.origin = sourceOrigin
@@ -179,6 +204,7 @@ class ViewController: UIViewController {
 			// update labels with game status
 			self.updateTurnOnScreen()
 			self.lblDisplayTurnOUTLET.text = nil
+			self.lblDisplayCheckOUTLET.text = nil
 		}))
 		
 		self.present(box, animated: true, completion: nil)

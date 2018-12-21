@@ -32,7 +32,7 @@ class ChessGame: NSObject {
 		for chessPiece in theChessBoard.vc.chessPieces {
 			if let pawn = chessPiece as? Pawn {
 				let pawnIndex = ChessBoard.indexOf(origin: pawn.frame.origin)
-				if pawnIndex.row == 0 || pawnIndex.col == 7 {
+				if pawnIndex.row == 0 || pawnIndex.row == 7 {
 					return pawn
 				}
 			}
@@ -76,7 +76,7 @@ class ChessGame: NSObject {
 		guard isMoveOnBoard(forPieceFrom: sourceIndex, thatGoesTo: destIndex) else {
 			print("Move not on Board")
 			return false
-		}
+		} 
 		
 		guard isTurnColor(sameAsPiece: piece) else {
 			print("WRONG TURN")
@@ -105,18 +105,18 @@ class ChessGame: NSObject {
 		return false
 	}
 	
-	func isNormalMoveValid(forPiece piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex, canAttackAllies: Bool = false) -> Bool {
+	func isNormalMoveValid(forPiece piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
 		guard source != dest else {
 			print("MOVING PIECE ON IT'S CURRENT POSITION")
 			return false
 		}
 		
-		if !canAttackAllies {
-			guard !isAttackingAlliedPiece(sourceChessPiece: piece, destIndex: dest) else {
-				print("ATTACKING ALLIED PIECE")
-				return false
-			}
+
+		guard !isAttackingAlliedPiece(sourceChessPiece: piece, destIndex: dest) else {
+			print("ATTACKING ALLIED PIECE")
+			return false
 		}
+
 		
 		switch piece {
 		case is Pawn:
