@@ -11,6 +11,7 @@ import UIKit
 class ChessGame: NSObject {
     var theChessBoard: ChessBoard!
     var isWhiteTurn = true;
+	var winner: String?
     
     func isMoveValid(piece: UIChessPiece, fromIndex sourceIndex: BoardIndex, toIndex destIndex: BoardIndex) -> Bool
     {
@@ -26,6 +27,26 @@ class ChessGame: NSObject {
         }
         return isNormalMoveValid(forPiece: piece, fromIndex: sourceIndex, toIndex: destIndex)
     }
+	
+	func isGameover() -> Bool {
+		if didSomebodyWin() {
+			return true
+		}
+		return false
+	}
+	
+	func didSomebodyWin() -> Bool {
+		if !(theChessBoard.vc.chessPieces.contains(theChessBoard.whiteKing)) {
+			winner = "Black"
+			return true
+		}
+		
+		if !(theChessBoard.vc.chessPieces.contains(theChessBoard.blackKing)) {
+			winner = "White"
+			return true
+		}
+		return false
+	}
     
     func isNormalMoveValid(forPiece piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         guard source != dest else {

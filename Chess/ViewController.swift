@@ -65,8 +65,15 @@ class ViewController: UIViewController {
             
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex) {
                 myChessGame.move(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex, toOrigin: destOrigin)
-                
+				
+				// check if game is over
+				if myChessGame.isGameover() {
+					displayWinner()
+					return
+				}
+				
                 myChessGame.nextTurn()
+				
                 updateTurnOnScreen()
             } else {
                 pieceDragged.frame.origin = sourceOrigin
@@ -74,6 +81,33 @@ class ViewController: UIViewController {
         
         }
     }
+	
+	func displayWinner() {
+		let box = UIAlertController(title: "Game Over", message: "\(myChessGame.winner!) wins", preferredStyle: .alert)
+		
+		box.addAction(UIAlertAction(title: "Back To Main Menu", style: .default, handler: {
+			action in self.performSegue(withIdentifier: "backToMainMenu", sender: self)
+		}))
+		
+		box.addAction(UIAlertAction(title: "Rematch", style: .default, handler: {
+			action in
+			
+			// clear the screen, chess pieces array, board matrix
+			for chessPiece in self.chessPieces {
+				self.myChessGame.theChessBoard.remove(piece: chessPiece)
+			}
+			
+			// create new game
+			self.myChessGame = ChessGame(viewController: self)
+			
+			// update labels with game status
+			self.updateTurnOnScreen()
+			self.lblDisplayTurnOUTLET.text = nil
+		}))
+		
+		self.present(box, animated: true, completion: nil)
+		
+	}
     
     func updateTurnOnScreen() {
         lblDisplayTurnOUTLET.text = myChessGame.isWhiteTurn ? "White's turn" : "Black's turn"
