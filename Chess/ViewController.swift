@@ -96,12 +96,52 @@ class ViewController: UIViewController {
 		updateTurnOnScreen()
 	}
 	
-	func promote(pawn pawnToBePromoted: Pawn, into option: String) {
+	func promote(pawn pawnToBePromoted: Pawn, into pieceName: String) {
+		let pawnColor = pawnToBePromoted.color
+		let pawnFrame = pawnToBePromoted.frame
+		let pawnIndex = ChessBoard.indexOf(origin: pawnToBePromoted.frame.origin)
 		
+		myChessGame.theChessBoard.remove(piece: pawnToBePromoted)
+		
+		switch pieceName {
+		case "Queen":
+			myChessGame.theChessBoard.board[pawnIndex.row][pawnIndex.col] = Queen(frame: pawnFrame, color: pawnColor, vc: self)
+		case "Knight":
+			myChessGame.theChessBoard.board[pawnIndex.row][pawnIndex.col] = Queen(frame: pawnFrame, color: pawnColor, vc: self)
+		case "Rook":
+			myChessGame.theChessBoard.board[pawnIndex.row][pawnIndex.col] = Rook(frame: pawnFrame, color: pawnColor, vc: self)
+		case "Bishop":
+			myChessGame.theChessBoard.board[pawnIndex.row][pawnIndex.col] = Bishop(frame: pawnFrame, color: pawnColor, vc: self)
+		default:
+			break
+		}
 	}
 	
 	func promptForPawnPromotion() {
-		
+		if let pawnToPromote = myChessGame.getPawnToBePromoted() {
+			let box = UIAlertController(title: "Pawn Promotion", message: "Choose Piece", preferredStyle: .alert)
+			box.addAction(UIAlertAction(title: "Queen", style: .default, handler: {
+				action in self.promote(pawn: pawnToPromote, into: action.title!)
+				self.resumeGame()
+			}))
+			
+			box.addAction(UIAlertAction(title: "Knight", style: .default, handler: {
+				action in self.promote(pawn: pawnToPromote, into: action.title!)
+				self.resumeGame()
+			}))
+			
+			box.addAction(UIAlertAction(title: "Rook", style: .default, handler: {
+				action in self.promote(pawn: pawnToPromote, into: action.title!)
+				self.resumeGame()
+			}))
+			
+			box.addAction(UIAlertAction(title: "Bishop", style: .default, handler: {
+				action in self.promote(pawn: pawnToPromote, into: action.title!)
+				self.resumeGame()
+			}))
+			
+			self.present(box, animated: true, completion: nil)
+		}
 	}
 	
 	func shouldPromotePawn() -> Bool {
