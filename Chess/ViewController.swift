@@ -72,11 +72,13 @@ class ViewController: UIViewController {
 					return
 				}
 				
-				// display check if any
-				displayCheck()
-                myChessGame.nextTurn()
+				if shouldPromotePawn() {
+					promptForPawnPromotion()
+				} else {
+					resumeGame()
+				}
 				
-                updateTurnOnScreen()
+
             } else {
                 pieceDragged.frame.origin = sourceOrigin
             }
@@ -84,6 +86,27 @@ class ViewController: UIViewController {
         }
     }
 	
+	
+	func resumeGame() {
+		// Display the check
+		displayCheck()
+		// Change the turn
+		myChessGame.nextTurn()
+		// Display turn on screen
+		updateTurnOnScreen()
+	}
+	
+	func promote(pawn pawnToBePromoted: Pawn, into option: String) {
+		
+	}
+	
+	func promptForPawnPromotion() {
+		
+	}
+	
+	func shouldPromotePawn() -> Bool {
+		return (myChessGame.getPawnToBePromoted() != nil)
+	}
 	
 	func displayCheck() {
 		let playerChecked = myChessGame.getPlayerChecked()
