@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NA3-fM-w6h">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Start Screen-->
+        <scene sceneID="4Ed-8o-2d2">
+            <objects>
+                <viewController id="NA3-fM-w6h" customClass="StartScreen" customModule="Chess" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fpa-1t-1k4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="atH-eB-VDb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="103" translatesAutoresizingMaskIntoConstraints="NO" id="ReO-EL-IG2">
+                                <rect key="frame" x="88.5" y="221" width="198" height="225"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPL-58-axU">
+                                        <rect key="frame" x="0.0" y="0.0" width="198" height="61"/>
+                                        <state key="normal" image="button_start-game"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-gp-Ebg">
+                                        <rect key="frame" x="51" y="164" width="96" height="61"/>
+                                        <state key="normal" image="button_quit"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="atH-eB-VDb" firstAttribute="bottom" secondItem="bRq-g8-2z5" secondAttribute="bottom" id="94o-gR-SkS"/>
+                            <constraint firstItem="atH-eB-VDb" firstAttribute="top" secondItem="bRq-g8-2z5" secondAttribute="top" id="NGg-9X-lMi"/>
+                            <constraint firstItem="atH-eB-VDb" firstAttribute="leading" secondItem="bRq-g8-2z5" secondAttribute="leading" id="QoW-tA-WqN"/>
+                            <constraint firstItem="ReO-EL-IG2" firstAttribute="centerY" secondItem="Fpa-1t-1k4" secondAttribute="centerY" id="Tp5-lz-BkV"/>
+                            <constraint firstItem="atH-eB-VDb" firstAttribute="trailing" secondItem="bRq-g8-2z5" secondAttribute="trailing" id="e3q-ep-tL5"/>
+                            <constraint firstItem="ReO-EL-IG2" firstAttribute="centerX" secondItem="Fpa-1t-1k4" secondAttribute="centerX" id="zFb-aR-TjX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bRq-g8-2z5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDZ-nP-onz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-711.20000000000005" y="31.934032983508249"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -372,4 +413,9 @@
             <point key="canvasLocation" x="63.75" y="32.74647887323944"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="150.24000549316406" height="105.36000061035156"/>
+        <image name="button_quit" width="96" height="61.5"/>
+        <image name="button_start-game" width="198.75" height="61.5"/>
+    </resources>
 </document>

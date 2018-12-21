@@ -6,4 +6,8 @@
 //  Copyright © 2018 Riad Mohamed. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class StartScreen: UIViewController {
+	
+}
